@@ -1,0 +1,33 @@
+@import '~normalize.css';
+
+$font-size: 1rem;
+$base-font-color: #b99150;
+$font-yellow: #ffaf18;
+
+html {
+    font-size: $font-size;
+    color: $base-font-color;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header,
+section,
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text {
+    &_yellow {
+        color: $font-yellow;
+    }
+}
