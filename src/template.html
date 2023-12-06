@@ -5,37 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+    <!-- <link rel="manifest" href="manifest.webmanifest"> -->
     <title>ITLogia Test</title>
     <link rel='stylesheet' href='style.css'>
 </head>
 
 <body>
     <header>
-        <div class="header__content">
+        <div class="header">
             <a href="#" class="logo">
-                <img src="" alt="">
-                <img src="" alt="">
+                <img
+                    src="./assets/images/pizza_474.png"
+                    class="logo__img"
+                    alt="logo"
+                >
+                <span class="logo__text">pizza<br/>cheff</span>
             </a>
             <nav>
-                <ul class="header__nav">
-                    <li>
+                <ul class="nav">
+                    <li class="nav__item">
                         <a href="#">
                             Пиццы
                         </a>
                     </li>
-                    <li>
+                    <li class="nav__item">
                         <a href="#">
                             Напитки
                         </a>
                     </li>
-                    <li>
+                    <li class="nav__item">
                         <a href="#">
                             Доставка и оплата
                         </a>
                     </li>
-                    <li>
+                    <li class="nav__item">
                         <a href="#">
                             Контакты
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -47,11 +56,11 @@
                 Самая вкусная пицца в мире
                 <span class="text_yellow">только в Pizza Cheff</span>
             </h1>
-            <ul>
-                <li>
+            <ul class="hero__list">
+                <li class="hero__item">
                     <img src="" alt="">
                     <div>
-                        <h3>Лучшее тесто</h3>
+                        <h4 class="hero__subtitle text_yellow">Лучшее тесто</h4>
                         <p>
                             Мы создаем тесто только из
                             отборной итальянской муки
@@ -59,10 +68,10 @@
                         </p>
                     </div>
                 </li>
-                <li>
+                <li class="hero__item">
                     <img src="" alt="">
                     <div>
-                        <h3>Лучшее тесто</h3>
+                        <h4 class="hero__subtitle text_yellow">Лучшее тесто</h4>
                         <p>
                             Мы создаем тесто только из
                             отборной итальянской муки
@@ -70,10 +79,10 @@
                         </p>
                     </div>
                 </li>
-                <li>
+                <li class="hero__item">
                     <img src="" alt="">
                     <div>
-                        <h3>Лучшее тесто</h3>
+                        <h4 class="hero__subtitle text_yellow">Лучшее тесто</h4>
                         <p>
                             Мы создаем тесто только из
                             отборной итальянской муки
@@ -81,10 +90,10 @@
                         </p>
                     </div>
                 </li>
-                <li>
+                <li class="hero__item">
                     <img src="" alt="">
                     <div>
-                        <h3>Лучшее тесто</h3>
+                        <h4 class="hero__subtitle text_yellow">Лучшее тесто</h4>
                         <p>
                             Мы создаем тесто только из
                             отборной итальянской муки
@@ -93,50 +102,92 @@
                     </div>
                 </li>
             </ul>
-            <a href="#">Выбрать пиццу</a>
+            <a href="#" class="btn">Выбрать пиццу</a>
         </section>
-        <section>
-            <h2>Выберите свою любимую пиццу</h2>
-            <ul>
+        <section class="card-section">
+            <h2 class="title">Выберите свою любимую пиццу</h2>
+            <ul class="card-wrap">
                 <li class="card">
                     <img src="" alt="">
                     <div class="card__info">
-                        <h4>Мясная Делюкс</h4>
-                        <p>
+                        <h3 class="card__title">Мясная Делюкс</h3>
+                        <p class="card__desc">
                             Пепперони, лук, бекон, томатная паста,
                             колбаски, перец, грибы, соус чили, ананасы
                         </p>
-                        <button>В корзину</button>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="" alt="">
+                    <div class="card__info">
+                        <h3 class="card__title">Морская Премиум</h3>
+                        <p class="card__desc">
+                            Перец, сыр, креветки, кальмары, мидии, лосось
+                        </p>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="" alt="">
+                    <div class="card__info">
+                        <h3 class="card__title">Бекон и Сосиски</h3>
+                        <p class="card__desc">
+                            Бекон, сыр, сосиски, ананас, томатная паста
+                        </p>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="" alt="">
+                    <div class="card__info">
+                        <h3 class="card__title">Куриная Делюкс</h3>
+                        <p class="card__desc">
+                            Курица, ананас, сыр Пепперони, соус для пиццы, томатная паста
+                        </p>
+                        <button class="btn">В корзину</button>
                     </div>
                 </li>
             </ul>
         </section>
         <footer>
-            <div class="footer__text">
-                <h2>
-                    <span class="text_yellow">
-                        Хватит думать!
-                    </span>
-                    Доставим заказ за 30 минут!
-                </h2>
-                <p>
-                    Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа.
-                    Если мы опоздаем даже на 1 минуту - вы
-                    получаете весь заказ бесплатно и ваучер на скидку на следующий заказ.
-                    Мы гордимся нашим сервисом и сделаем всё, чтобы
-                    наш клиент был доволен и не остался голодный!
-                </p>
-            </div>
-            <div class="footer__form">
-                <form>
-                    <input type="text" placeholder="Ваше имя">
-                    <input type="text" placeholder="Адрес доставки">
-                    <input type="text" placeholder="Телефон">
-                    <button type="submit">Оформить заказ</button>
+            <div class="footer">
+                <div class="footer__text">
+                    <h2 class="title">
+                        <span class="text_yellow">
+                            Хватит думать!
+                        </span>
+                        Доставим заказ за 30 минут!
+                    </h2>
+                    <p>
+                        Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа.
+                        Если мы опоздаем даже на 1 минуту - вы
+                        получаете весь заказ бесплатно и ваучер на скидку на следующий заказ.
+                        Мы гордимся нашим сервисом и сделаем всё, чтобы
+                        наш клиент был доволен и не остался голодный!
+                    </p>
+                </div>
+                <form class="form js-callback-form">
+                    <div class="form__input-wrap">
+                        <input id="username" class="input" type="text" autocomplete="off" placeholder="Ваше имя">
+                        <small></small>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input id="address" class="input js-input" type="text" placeholder="Адрес доставки">
+                        <small></small>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input id="phone" class="input js-input" type="tel" placeholder="Телефон">
+                        <small></small>
+                    </div>
+                    <button type="submit" class="btn">Оформить заказ</button>
                 </form>
             </div>
         </footer>
     </main>
+    <div class="modal">
+        Спасибо за заказ!
+    </div>
     <script src="bundle.js"></script>
 </body>
 

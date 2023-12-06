@@ -1,17 +1,26 @@
 @import '~normalize.css';
+@import 'fonts.css';
 
 $font-size: 1rem;
-$base-font-color: #b99150;
+$font-base: #b99150;
 $font-yellow: #ffaf18;
+$font-dark: #382400;
+$font-logo: #ffc468;
+$font-darker: #181a1a;
+$shadow: 0px 3px 14px 1px rgba(152, 152, 152, 0.2);
 
 html {
     font-size: $font-size;
-    color: $base-font-color;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $font-base;
+    font-family: 'Muller', sans-serif;
 }
 
 ul {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
 }
 
 a {
@@ -19,15 +28,264 @@ a {
     text-decoration: none;
 }
 
-header,
+h1 {
+    margin: 0 0 55px;
+    font-size: 2.8125rem;
+    font-weight: 800;
+    line-height: 3.4375rem;
+}
+
+h2 {
+    font-size: 2.1875rem;
+    line-height: 2.8125rem;
+}
+
+p {
+    margin: 0;
+}
+
+.header,
 section,
-footer {
+.footer {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+header {
+    box-shadow: $shadow;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+
+    nav {
+        flex-grow: 1;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    &__img {
+        background-image: url('../img/pizza_474.png');
+        background-size: 0;
+    }
+
+    &__text {
+        display: inline-block;
+        margin-left: 10px;
+        color: $font-logo;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+
+    &__item {
+        margin-right: 50px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
 }
 
 .text {
     &_yellow {
         color: $font-yellow;
+    }
+}
+
+.hero {
+    margin-top: 130px;
+    margin-bottom: 130px;
+    background-image: url('../img/pizza_big_484.png');
+    background-size: 50%;
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 615px;
+    }
+
+    &__item {
+        display: flex;
+        width: calc(50% - 23px);
+        margin-bottom: 60px;
+        
+        &:nth-of-type(odd) {
+            padding-right: 45px;
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+        line-height: 1.5;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+    }
+}
+
+.title .text_yellow {
+    display: block;
+}
+
+.btn {
+    padding: 0 53px;
+    display: inline-block;
+    line-height: 3.5;
+    font-weight: 700;
+    color: $font-dark;
+    background-color: $font-yellow;
+    border: none;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 3px 3px 8px 8px rgba(255, 175, 24, 0.5);
+    }
+}
+
+.card-section {
+    .title {
+        text-align: center;
+    }
+}
+
+.card {
+    display: flex;
+    width: calc(25% - 18px);
+    margin-right: 24px;
+    margin-bottom: 24px;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: $shadow;
+    box-sizing: border-box;
+
+    &:nth-of-type(4n) {
+        margin-right: 0;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    &__title {
+        margin: 0;
+        color: $font-dark;
+        font-size: 1.125rem;
+        line-height: 3.4375;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__desc {
+        flex: 1;
+        margin-bottom: 18px;
+        color: $font-darker;
+        font-size: .875rem;
+        line-height: 1.125rem;
+    }
+}
+
+.card-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer {
+    overflow: hidden;
+}
+
+.footer {
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    margin-bottom: 100px;
+    margin-top: 225px;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 410px;
+        height: 454px;
+        position: absolute;
+        right: -125px;
+        bottom: -35px;
+        background-image: url('../img/pizzzzza_660.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .title {
+        margin-bottom: 60px;
+    }
+
+    &__text {
+        width: 32%;
+        margin-right: 125px;
+    }
+}
+
+.form {
+    width: 100%;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+    max-width: 330px;
+    border: 1px solid $font-base;
+
+    &::placeholder {
+        color: $font-base;
+    }
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    text-align: center;
+    font-size: 45px;
+    font-weight: 800;
+    padding: 30px;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: $shadow;
+    z-index: -100;
+    box-sizing: border-box;
+
+    &_open {
+        z-index: 1;
+        opacity: 1;
     }
 }
