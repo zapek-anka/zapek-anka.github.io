@@ -2,12 +2,16 @@
 @import 'fonts.css';
 
 $font-size: 1rem;
-$font-base: #b99150;
 $font-yellow: #ffaf18;
-$font-dark: #382400;
 $font-logo: #ffc468;
+$font-placeholder: #cba86e;
+$font-title: #bd985c;
+$font-base: #b99150;
+$font-menu: #a46b00;
+$font-dark: #382400;
 $font-darker: #181a1a;
 $shadow: 0px 3px 14px 1px rgba(152, 152, 152, 0.2);
+$transition: all .4s ease-in-out;
 
 html {
     font-size: $font-size;
@@ -29,13 +33,14 @@ a {
 }
 
 h1 {
-    margin: 0 0 55px;
+    margin: 0 0 60px;
     font-size: 2.8125rem;
     font-weight: 800;
     line-height: 3.4375rem;
 }
 
 h2 {
+    margin-top: 0;
     font-size: 2.1875rem;
     line-height: 2.8125rem;
 }
@@ -57,8 +62,9 @@ header {
 
 .header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 15px 0;
+    padding: 15px;
 
     nav {
         flex-grow: 1;
@@ -68,11 +74,6 @@ header {
 .logo {
     display: flex;
     align-items: center;
-
-    &__img {
-        background-image: url('../img/pizza_474.png');
-        background-size: 0;
-    }
 
     &__text {
         display: inline-block;
@@ -89,13 +90,14 @@ header {
 .nav {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 30px;
 
     &__item {
-        margin-right: 50px;
-
-        &:last-of-type {
-            margin-right: 0;
-        }
+        margin: 10px auto;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
     }
 }
 
@@ -106,35 +108,53 @@ header {
 }
 
 .hero {
+    padding: 0 15px;
     margin-top: 130px;
-    margin-bottom: 130px;
-    background-image: url('../img/pizza_big_484.png');
-    background-size: 50%;
-    background-position: right center;
-    background-repeat: no-repeat;
+    margin-bottom: 160px;
+
+    &__img {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            // max-width: 100%;
+            object-fit: contain;
+            object-position: center center;
+        }
+    }
 
     &__list {
         display: flex;
         flex-wrap: wrap;
-        max-width: 615px;
+        width: 100%;
+        max-width: 645px;
     }
 
     &__item {
         display: flex;
-        width: calc(50% - 23px);
-        margin-bottom: 60px;
-        
-        &:nth-of-type(odd) {
-            padding-right: 45px;
-        }
+        width: 100%;
+        margin-bottom: 45px;
     }
 
     &__subtitle {
-        margin: 0;
+        margin: 0 0 10px;
         line-height: 1.5;
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.02em;
+    }
+
+    &__description {
+        line-height: 1;
+        letter-spacing: 0.02em;
+    }
+
+    .btn {
+        margin-top: 15px;
     }
 }
 
@@ -143,70 +163,34 @@ header {
 }
 
 .btn {
-    padding: 0 53px;
+    padding: 2px 53px;
     display: inline-block;
     line-height: 3.5;
     font-weight: 700;
     color: $font-dark;
     background-color: $font-yellow;
     border: none;
-    transition: all 1s ease-in-out;
+    transition: $transition;
     cursor: pointer;
 
     &:hover {
-        box-shadow: 3px 3px 8px 8px rgba(255, 175, 24, 0.5);
+        box-shadow: 0 0 16px 5px rgba(255, 175, 24, 0.7);
     }
 }
 
 .card-section {
     .title {
+        margin-bottom: 60px;
         text-align: center;
-    }
-}
-
-.card {
-    display: flex;
-    width: calc(25% - 18px);
-    margin-right: 24px;
-    margin-bottom: 24px;
-    padding: 10px 20px;
-    text-align: center;
-    box-shadow: $shadow;
-    box-sizing: border-box;
-
-    &:nth-of-type(4n) {
-        margin-right: 0;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    &__title {
-        margin: 0;
-        color: $font-dark;
-        font-size: 1.125rem;
-        line-height: 3.4375;
-    }
-
-    &__info {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
-
-    &__desc {
-        flex: 1;
-        margin-bottom: 18px;
-        color: $font-darker;
-        font-size: .875rem;
-        line-height: 1.125rem;
+        color: $font-title;
     }
 }
 
 .card-wrap {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 15px;
 }
 
 footer {
@@ -216,31 +200,20 @@ footer {
 .footer {
     display: flex;
     position: relative;
-    align-items: flex-end;
-    margin-bottom: 100px;
-    margin-top: 225px;
-
-    &::after {
-        content: '';
-        display: block;
-        width: 410px;
-        height: 454px;
-        position: absolute;
-        right: -125px;
-        bottom: -35px;
-        background-image: url('../img/pizzzzza_660.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+    align-items: center;
+    flex-direction: column;
+    padding: 0 15px;
+    margin-bottom: 105px;
+    margin-top: 215px;
 
     .title {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
+        font-weight: 800;
     }
 
     &__text {
-        width: 32%;
-        margin-right: 125px;
+        width: 100%;
+        margin-bottom: 60px;
     }
 }
 
@@ -260,7 +233,12 @@ footer {
     border: 1px solid $font-base;
 
     &::placeholder {
-        color: $font-base;
+        font-size: 1.125rem;
+        color: $font-placeholder;
+    }
+
+    &:focus {
+        outline: none;
     }
 }
 
@@ -280,12 +258,215 @@ footer {
     opacity: 0;
     transform: translate(-50%, -50%);
     background-color: white;
-    box-shadow: $shadow;
+    box-shadow: 0px 3px 14px 1px rgba(152, 152, 152, 1);
     z-index: -100;
     box-sizing: border-box;
+    transition: all ease-in-out;
 
     &_open {
         z-index: 1;
         opacity: 1;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 370px;
+    margin-bottom: 24px;
+    padding: 25px 20px 15px;
+    text-align: center;
+    box-shadow: $shadow;
+    box-sizing: border-box;
+
+    &:nth-of-type(4n) {
+        margin-right: 0;
+    }
+
+    &__lightbox {
+        height: 150px;
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 3.125;
+    }
+
+    &__title {
+        margin: 14px 0;
+        color: $font-dark;
+        font-size: 1.125rem;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__desc {
+        flex: 1;
+        margin-bottom: 15px;
+        color: $font-darker;
+        font-size: .875rem;
+        line-height: 1.125rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        flex-direction: row;
+    }
+
+    .nav {
+        margin-top: 0;
+        flex-direction: row;
+
+        &__item {
+                margin: 0 50px 0 0;
+        
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+    }
+
+    .hero {
+        &__item {
+            display: flex;
+            width: calc(50% - 23px);
+            margin-bottom: 45px;
+
+            &:nth-of-type(odd) {
+                padding-right: 45px;
+            }
+        }
+    }
+
+    .card {
+        width: calc(50% - 12px);
+        margin-right: 24px;
+
+        &:nth-of-type(even) {
+            margin-right: 0;
+        }
+    }
+
+    .card-wrap {
+        margin: 0 auto;
+        max-width: 765px;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hero {
+        background-image: url('../img/pizza_big_484.png');
+        background-size: 45%;
+        background-position: right -110px top 50px;
+        background-repeat: no-repeat;
+    }
+
+    .card {
+        width: calc(100% / 3 - 16px);
+
+        &:nth-of-type(even) {
+            margin-right: 24px;
+        }
+
+        &:nth-of-type(3n) {
+            margin-right: 0;
+        }
+    }
+
+    .card-wrap {
+        max-width: 965px;
+    }
+
+    .footer {
+        align-items: flex-end;
+        flex-direction: row;
+        max-width: 965px;
+        justify-content: space-between;
+
+        .title {
+            margin-bottom: 70px;
+        }
+
+        &__text {
+            width: 40%;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1248px) {
+    .header {
+        padding: 15px 0;
+    }
+
+    .hero {
+        padding: 0;
+        background-position: right 0 top 50px;
+    }
+
+    .card {
+        width: calc(25% - 18px);
+        margin-right: 24px;
+
+        &:nth-of-type(3n) {
+            margin-right: 24px;
+        }
+
+        &:nth-of-type(4n) {
+            margin-right: 0;
+        }
+    }
+
+    .card-wrap {
+        padding: 0;
+        max-width: unset;
+    }
+
+    .footer {
+        justify-content: flex-start;
+        max-width: unset;
+        width: 1200px;
+        padding: 0;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 410px;
+            height: 454px;
+            position: absolute;
+            right: -125px;
+            bottom: -35px;
+            background-image: url('../img/pizzzzza_660.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    
+        .title {
+            margin-bottom: 70px;
+        }
+    
+        &__text {
+            width: 32%;
+            margin-right: 130px;
+            margin-bottom: 0;
+        }
     }
 }

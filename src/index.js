@@ -1,3 +1,4 @@
+require('fslightbox');
 import './styles/style.scss';
 
 class pizzaCheff {
@@ -103,7 +104,6 @@ class pizzaCheff {
         formField.classList.remove('success');
         formField.classList.add('error');
         const error = formField.querySelector('small');
-        // error.textContent = message;
         error.innerHTML = message;
     }
 
@@ -141,7 +141,7 @@ class pizzaCheff {
             .then((json) => console.log(json));
             this.callbackForm.reset();
             this.modal.classList.add('modal_open');
-            setTimeout(this.closeModal(), 1500);
+            setTimeout(this.closeModal.bind(this), 1500);
         }
     }
 

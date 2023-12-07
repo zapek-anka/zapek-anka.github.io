@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const cssExtract = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,7 +9,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: 'assets/images/[name][ext]'
+        assetModuleFilename: 'assets/[name][ext]'
     },
     module: {
         rules: [
@@ -25,10 +26,6 @@ module.exports = {
                     'sass-loader',
                 ]
             },
-            // {
-            //     test: /\.(scss|css)$/,
-            //     use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-            // },
             {
                 test: /\.(png|jpg|gif|eot|ttf|woff)$/,
                 type: 'asset/resource'
@@ -50,6 +47,22 @@ module.exports = {
             inject: false,
             template: path.join(__dirname, 'src', 'template.html'),
             filename: 'index.html',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/img'),
+                    to: path.resolve(__dirname, 'dist/img')
+                },
+                {
+                    from: path.resolve(__dirname, 'src/img/catalog'),
+                    to: path.resolve(__dirname, 'dist/img/catalog')
+                },
+                {
+                    from: path.resolve(__dirname, 'src/img/list-icons'),
+                    to: path.resolve(__dirname, 'dist/img/list-icons')
+                },
+            ]
         }),
     ],
     devServer: {
